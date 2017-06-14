@@ -1,0 +1,2 @@
+aString = 'Hello Rob'
+integerString = int(a)
