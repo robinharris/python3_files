@@ -5,7 +5,7 @@ import numpy as np
 from datetime import datetime
 
 # SQLite DB Name
-DB_Name =  "home_6Jun.db"
+DB_Name =  "home_26June.db"
 
 connection = sqlite3.connect(DB_Name)
 cursor = connection.cursor()
@@ -91,7 +91,7 @@ def main():
             level1 = 0 #reset menu choices
             level2 = 0 #reset menu choices
     level3Menu()
-    cursor.execute("SELECT sensorid, date, temp, voltage FROM sensordata WHERE sensorID=? LIMIT 5", [rooms[level1].strip('\'')])    ##fetch all the data selected
+    cursor.execute("SELECT sensorid, date, temp, voltage FROM sensorData WHERE sensorID=? LIMIT 5", [rooms[level1].strip('\'')])    ##fetch all the data selected
     dataSelected = cursor.fetchall()
     for row in dataSelected:
         print(row)
