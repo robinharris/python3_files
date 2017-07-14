@@ -1,0 +1,490 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"prin",
+				"printDirectory"
+			],
+			[
+				"send",
+				"sendContent"
+			],
+			[
+				"dow",
+				"downloadFile"
+			],
+			[
+				"file",
+				"fileListing"
+			],
+			[
+				"butt",
+				"buttonState"
+			],
+			[
+				"button",
+				"buttonState"
+			],
+			[
+				"last",
+				"lastButtonState"
+			],
+			[
+				"di",
+				"displaydata"
+			],
+			[
+				"pin",
+				"pinCount"
+			],
+			[
+				"dei",
+				"define\tDeviot Macro define"
+			],
+			[
+				"light",
+				"lightLevel"
+			],
+			[
+				"li",
+				"lightLevel"
+			],
+			[
+				"h",
+				"h1\tTag"
+			],
+			[
+				"mess",
+				"messageToSend"
+			],
+			[
+				"rese",
+				"resetArduinoMessage"
+			],
+			[
+				"message",
+				"messagePos"
+			],
+			[
+				"mee",
+				"messagePos"
+			],
+			[
+				"incom",
+				"incomingByte"
+			],
+			[
+				"comm",
+				"commandWithCR"
+			],
+			[
+				"WS",
+				"WStype_TEXT"
+			],
+			[
+				"str",
+				"stringDummyData"
+			],
+			[
+				"webSocket",
+				"webSocketEvent"
+			],
+			[
+				"we",
+				"webSocketEvent"
+			],
+			[
+				"sendRobot",
+				"sendRobotCommandBuffer"
+			],
+			[
+				"uint",
+				"uint8_t"
+			],
+			[
+				"co",
+				"command"
+			],
+			[
+				"i",
+				"innerHTML"
+			],
+			[
+				"V",
+				"Voltage"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "exercise1.py",
+			"settings":
+			{
+				"buffer_size": 103,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "exercises.sublime-project",
+			"settings":
+			{
+				"buffer_size": 671,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 167.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 377.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"for i in range (5):",
+			"print (\"hello\")",
+			"ls",
+			"python3 exercise1.py"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/robin/python3_files"
+	],
+	"file_history":
+	[
+		"/Users/robin/python3_files/exercises.sublime-project",
+		"/Users/robin/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/robin/python3_files/exercise1.py",
+		"/Users/robin/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/Users/robin/ArduinoDev/Arduino/currentVoltageLogger/currentVoltageLogger.ino",
+		"/Users/robin/ArduinoDev/file_server/file_server.ino",
+		"/Users/robin/test1.py",
+		"/Users/robin/cinema.py",
+		"/Users/robin/ArduinoDev/Arduino/currentVoltageLogger/currentVoltageLogger/currentVoltageLogger.ino",
+		"/Users/robin/Documents/Arduino/libraries/Adafruit_INA219/Adafruit_INA219.h",
+		"/Users/robin/Documents/Arduino/libraries/Adafruit_INA219/Adafruit_INA219.cpp",
+		"/Users/robin/ArduinoDev/Arduino/NTPTime_OLED.ino/NTPTime_OLED.ino.ino",
+		"/Users/robin/ArduinoDev/Arduino/wemos_test/wemos_test.ino",
+		"/Users/robin/ArduinoDev/Arduino/wemos_test.ino",
+		"/Users/robin/ArduinoDev/Arduino/ESP_DS18B20_Probe_mqtt_home1/ESP_DS18B20_Probe_mqtt_home1.ino",
+		"/Users/robin/ArduinoDev/Arduino/ESP_DS18B20_Room_Temp_2/ESP_DS18B20_Room_Temp_2.ino",
+		"/Users/robin/ArduinoDev/Arduino/ESP_DS18B20_Probe_mqtt_Sensor2/ESP_DS18B20_Probe_mqtt_Sensor2.ino",
+		"/Users/robin/hpb/test/test.ino",
+		"/Users/robin/hpb/RobotSensorsAndMotors/Commands.h",
+		"/Users/robin/SimpleWebServer/data/jsonTest.htm",
+		"/Users/robin/SimpleWebServer/data/test.html",
+		"/Users/robin/SimpleWebServer/webServerWebsockets/webServerWebsockets.ino",
+		"/Users/robin/HullPixelbot/RobotSensorsAndMotors/Commands.h",
+		"/Users/robin/hpb/hpb/webServerWebsockets/webServerWebsockets_PLAY.ino",
+		"/Users/robin/hpb/webServerWebsockets/webServer.ino.old",
+		"/Users/robin/hpb/hpb/webServerWebsockets/webServerWebsockets_PLAY/webServerWebsockets_PLAY.ino",
+		"/Users/robin/hpb/hpb/ESP8266_WebSockets_NeoPixels/data/index.htm",
+		"/Users/robin/hpb/hpb/ESP8266_WebSockets_NeoPixels/data/edit.htm",
+		"/Users/robin/hpb/hpb/ESP8266_WebSockets_NeoPixels/ESP8266_WebSockets_NeoPixels.ino",
+		"/Users/robin/hpb/hpb/ESP8266_WebSockets_NeoPixels/README.md",
+		"/Users/robin/HullPixelbot/SimpleWebServer/HullPixelbotWebServer/HullPixelbotWebServer.ino",
+		"/Users/robin/HullPixelbot/RobotSensorsAndMotors/RobotSensorsAndMotors.ino",
+		"/Users/robin/git/power-icu/power-icu/voltage-monitor.ino",
+		"/Users/robin/git/power-icu/power-icu/voltage-monitor/voltage-monitor.ino",
+		"/Users/robin/git/power-icu/power-icu/FONAPlatStd.h",
+		"/Users/robin/git/power-icu/power-icu/Adafruit_FONA.cpp",
+		"/Users/robin/git/power-icu/power-icu/Adafruit_FONA.h",
+		"/Users/robin/git/power-icu/power-icu/Time.cpp",
+		"/Users/robin/git/power-icu/power-icu/Time.h",
+		"/Users/robin/git/power-icu/power-icu/power-icu.ino"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"<current file>",
+			"<current file>,/Users/robin/HullPixelbot/RobotSensorsAndMotors",
+			"<current file>",
+			"open file",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"interpreter",
+			"Serial",
+			"distance",
+			"function",
+			"getrawch",
+			"Serial.read",
+			"programCommand",
+			"0x0D",
+			"0x0d",
+			"commandPos",
+			"characterRead",
+			"Serial",
+			"Serial.available",
+			"Serial.",
+			"Serial.read",
+			"programCommand",
+			"command",
+			"commandLimit",
+			"interpretCommandByte",
+			"commandPos",
+			"programCommand",
+			"commandPos",
+			"decodePos",
+			"commandPos",
+			"commandPos\ncommandPos",
+			"commandPos",
+			"lenght",
+			"updateProgramExecution",
+			"dayCounter",
+			"readline",
+			"/*",
+			"FONAPlat"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"length"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "exercise1.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 103,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								103,
+								103
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "exercises.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								160,
+								160
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 43.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 225.0
+	},
+	"output.find_results":
+	{
+		"height": 148.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "exercises.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/test1.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 77.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
