@@ -1,0 +1,258 @@
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170724
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170724
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE date > '20170724' AND date < '20170731'
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170701
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170701
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE date > '20170701' AND date < '20170731'
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170701
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170701
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE date > '20170701' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170701
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170701
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE date > '20170701' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170724
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170724
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE date > '20170724' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170724
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170724
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE date > '20170724' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170701
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170701
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE date > '20170701' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170701
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170701
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170701' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170101
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170101
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE date > '20170101' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170601
+INFO:root:endDate 20170630
+INFO:root:Start date: 20170601
+INFO:root:End date: 20170630
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170601' AND date < '20170630'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170724
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170724
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170724' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170725
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170725
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE date > '20170725' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170725
+INFO:root:endDate 20170731
+INFO:root:Start date: 20170725
+INFO:root:End date: 20170731
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170725' AND date < '20170731'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170801
+INFO:root:endDate 20170809
+INFO:root:Start date: 20170801
+INFO:root:End date: 20170809
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170801' AND date < '20170809'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170718
+INFO:root:endDate 20170809
+INFO:root:Start date: 20170718
+INFO:root:End date: 20170809
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170718' AND date < '20170809'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170805
+INFO:root:endDate 20170809
+INFO:root:Start date: 20170805
+INFO:root:End date: 20170809
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170805' AND date < '20170809'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170701
+INFO:root:endDate 20170809
+INFO:root:Start date: 20170701
+INFO:root:End date: 20170809
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170701' AND date < '20170809'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170805
+INFO:root:endDate 20170810
+INFO:root:Start date: 20170805
+INFO:root:End date: 20170810
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170805' AND date < '20170810'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170725
+INFO:root:endDate 20170810
+INFO:root:Start date: 20170725
+INFO:root:End date: 20170810
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170725' AND date < '20170810'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170701
+INFO:root:endDate 20170810
+INFO:root:Start date: 20170701
+INFO:root:End date: 20170810
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170701' AND date < '20170810'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170908
+INFO:root:endDate 20170919
+INFO:root:Start date: 20170908
+INFO:root:End date: 20170919
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170908' AND date < '20170919'
+ERROR:ex:Error no such table: sensordata
+Traceback (most recent call last):
+  File "homeDataAnalysis2.py", line 191, in main
+    cursor.execute(selectString)
+sqlite3.OperationalError: no such table: sensordata
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170908
+INFO:root:endDate 20170919
+INFO:root:Start date: 20170908
+INFO:root:End date: 20170919
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170908' AND date < '20170919'
+ERROR:ex:Error no such table: sensordata
+Traceback (most recent call last):
+  File "homeDataAnalysis2.py", line 191, in main
+    cursor.execute(selectString)
+sqlite3.OperationalError: no such table: sensordata
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20171101
+INFO:root:endDate 20171111
+INFO:root:Start date: 20171101
+INFO:root:End date: 20171111
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20171101' AND date < '20171111'
+ERROR:ex:Error no such table: sensordata
+Traceback (most recent call last):
+  File "homeDataAnalysis2.py", line 191, in main
+    cursor.execute(selectString)
+sqlite3.OperationalError: no such table: sensordata

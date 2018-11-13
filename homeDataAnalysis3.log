@@ -1,0 +1,63 @@
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Room selected: 1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170415
+INFO:root:endDate 20170810
+INFO:root:Start date: 20170415
+INFO:root:End date: 20170810
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170415' AND date < '20170810' AND sensorid = 'LOUNGE' 
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Room selected: 1
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170415
+INFO:root:endDate 20170810
+INFO:root:Start date: 20170415
+INFO:root:End date: 20170810
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170415' AND date < '20170810' AND sensorid = 'Lounge' 
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Room selected: 4
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170908
+INFO:root:endDate 20170810
+INFO:root:Start date: 20170908
+INFO:root:End date: 0
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170908' AND date < '0' AND sensorid = 'Lounge' 
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Room selected: 4
+INFO:root:Starting level3Menu
+INFO:root:startDate 20170908
+INFO:root:endDate 20170919
+INFO:root:Start date: 20170908
+INFO:root:End date: 20170919
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20170908' AND date < '20170919' AND sensorid = 'Lounge' 
+INFO:root:Starting main
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Room selected: 4
+INFO:root:Starting level3Menu
+INFO:root:startDate 20171101
+INFO:root:endDate 20171111
+INFO:root:Start date: 20171101
+INFO:root:End date: 20171111
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE date > '20171101' AND date < '20171111' AND sensorid = 'Lounge' 

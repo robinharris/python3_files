@@ -1,0 +1,171 @@
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170908
+INFO:root:endDate 20170919
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Outside' AND date > '20170908' AND date < '20170919'
+ERROR:ex:Error no such table: sensordata
+Traceback (most recent call last):
+  File "homeDataAnaylsis.py", line 133, in main
+    cursor.execute(selectString)
+sqlite3.OperationalError: no such table: sensordata
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170908
+INFO:root:endDate 20170919
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Outside' AND date > '20170908' AND date < '20170919'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170908
+INFO:root:endDate 20170919
+INFO:root:SELECT sensorid, date, voltage FROM sensordata WHERE sensorID = 'Outside' AND date > '20170908' AND date < '20170919'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170908
+INFO:root:endDate 20170919
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Lounge' AND date > '20170908' AND date < '20170919'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170908
+INFO:root:endDate 20170920
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Conservatory' AND date > '20170908' AND date < '20170920'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170401
+INFO:root:endDate 20170919
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Outside' AND date > '20170401' AND date < '20170919'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170401
+INFO:root:endDate 20170919
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Workshop' AND date > '20170401' AND date < '20170919'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170401
+INFO:root:endDate 20170919
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Conservatory' AND date > '20170401' AND date < '20170919'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170701
+INFO:root:endDate 20171103
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Bedroom' AND date > '20170701' AND date < '20171103'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20171101
+INFO:root:endDate 20171111
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Conservatory' AND date > '20171101' AND date < '20171111'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20171101
+INFO:root:endDate 20171111
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Outside' AND date > '20171101' AND date < '20171111'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20170101
+INFO:root:endDate 20171111
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Bedroom' AND date > '20170101' AND date < '20171111'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20171101
+INFO:root:endDate 20171117
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Outside' AND date > '20171101' AND date < '20171117'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20171101
+INFO:root:endDate 20171117
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Bedroom' AND date > '20171101' AND date < '20171117'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph
+INFO:root:Starting
+INFO:root:Start level1 menu
+INFO:root:Finished level1
+INFO:root:Starting level2 menu
+INFO:root:Finished level2
+INFO:root:Starting level3
+INFO:root:startDate 20171101
+INFO:root:endDate 20171117
+INFO:root:SELECT sensorid, date, temp FROM sensordata WHERE sensorID = 'Workshop' AND date > '20171101' AND date < '20171117'
+INFO:root:Starting to create xAxis
+INFO:root:Starting to graph

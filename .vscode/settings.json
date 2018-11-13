@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/usr/local/bin/python3.6",
+    "terminal.integrated.env.osx": {
+        "PATH": "/Users/robin/.platformio/penv/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Wireshark.app/Contents/MacOS"
+    }
+}

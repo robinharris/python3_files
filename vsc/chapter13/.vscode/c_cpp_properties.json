@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/Users/robin/Library/Arduino15/packages/arduino/hardware/samd/1.6.17/cores/arduino"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "/Users/robin/Library/Arduino15/packages/arduino/hardware/samd/1.6.17/cores/arduino"
+                ]
+            }
+        }
+    ]
+}
