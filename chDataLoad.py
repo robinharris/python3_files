@@ -1,7 +1,7 @@
 #------------------------------------------
 #--- Author: Robin Harris
-#--- Date: 19th November 2018
-#--- Version: 1.0
+#--- Date: 21st November 2018
+#--- Version: 2.0
 #--- Python Ver: 3.6
 #------------------------------------------
 
@@ -36,11 +36,7 @@ def on_message(mqttc, obj, msg):
         database="robindb"
     )
     mycursor = mydb.cursor()
-    temperature = 0
-    humidity = 0
-    pressure = 0
-    pm10 = 0
-    pm25 = 0
+    temperature = humidity = pressure = pm10 = pm25 = 0
     dev_id = ""
     topic = ""
     now = datetime.datetime.now()
