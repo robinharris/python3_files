@@ -1,6 +1,6 @@
 #------------------------------------------
 #--- Author: Robin Harris
-#--- Date: 21st November 2018
+#--- Date: 23rd November 2018
 #--- Version: 2.0
 #--- Python Ver: 3.6
 #------------------------------------------
@@ -15,6 +15,8 @@ mqttBroker = 'mqtt.connectedhumber.org'
 mqttClientUser = "connectedhumber"
 mqttClientPassword = "3fds8gssf6"
 
+now = owner = dev_id = None
+temperature = pressure = humidity = pm10 = pm25 = None
 
 def loadData(dateTime, topic, value):
    pass 
@@ -28,44 +30,44 @@ def on_connect(mqttc, obj, flags, rc):
         print("Bad connection Returned code=",str(rc))
 
 def on_message(mqttc, obj, msg):
-    mydb = mysql.connector.connect(
-        host="localhost",
-        # host="db.connectedhumber.org",
-        user="robinusr",
-        passwd="spanTHEr1v3r",
-        database="robindb"
-    )
-    mycursor = mydb.cursor()
-    temperature = humidity = pressure = pm10 = pm25 = 0
-    dev_id = ""
-    topic = ""
-    now = datetime.datetime.now()
+    global now, owner, dev_id
+    global temperature, pressure, humidity, pm10, pm25
+    print("message received:  " + str(msg.topic))
     topic = str(msg.topic)
     if topic.startswith('/'):
         topic = topic[1:]
     topicTree = topic.split("/")
     topicTreeLevels = len(topicTree)
+
+    now = datetime.datetime.now()
+    print("Updated now")
+
     owner = topicTree[1]
-    for level in range(2 , (topicTreeLevels - 1)):
-        dev_id += topicTree[level]
+    print("Updated owner")
+
+    # for level in range(2 , (topicTreeLevels - 1)):
+    #     dev_id += topicTree[level]
+    dev_id = topicTree[2]
+    print("Updated dev_id")
+
+    field = topicTree[-1]
     value = msg.payload.decode("utf-8")
     value = float(value)
     value = round(value)
-    if 'temperature' in topic:
-        sql = "INSERT INTO aq_data (dateTime, owner, dev_id, temperature) VALUES (%s, %s, %s, %s)"
-    elif 'humidity' in topic:
-        sql = "INSERT INTO aq_data (dateTime, owner, dev_id, humidity) VALUES (%s, %s, %s, %s)"
-    elif 'pressure' in topic:
-        sql = "INSERT INTO aq_data (dateTime, owner, dev_id, pressure) VALUES (%s, %s, %s, %s)"
-    elif 'pm25' in topic:
-        sql = "INSERT INTO aq_data (dateTime, owner, dev_id, pm25) VALUES (%s, %s, %s, %s)"
-    elif 'pm10' in topic:
-        sql = "INSERT INTO aq_data (dateTime, owner, dev_id, pm10) VALUES (%s, %s, %s, %s)"
-    
-    vals = (now, owner, dev_id, value)
-    mycursor.execute(sql, vals)
-    mydb.commit()
-    time.sleep(1)
+    print("Update field: ", field)
+    print("Update value: ", value)
+    if field == 'temperature':
+        temperature = value
+    elif field == 'pressure':
+        pressure = value
+    elif field == 'humidity':
+        humidity = value
+    elif field == 'pm10':
+        pm10 = value
+    elif field == 'pm25':
+        pm25 = value
+    print(now, owner, dev_id, temperature, pressure, humidity, pm10, pm25)
+
 
 def on_subscribe(mqttc,obj,mid,granted_qos):
     print("Subscribed: " + str(mid))
@@ -85,5 +87,25 @@ mydb = mysql.connector.connect(
   passwd="spanTHEr1v3r",
   database="robindb"
 )
+mycursor = mydb.cursor()
 
-mqttc.loop_forever()
+while (True):
+    if (((dev_id == 'aq1') or (dev_id == 'aq2')) and (not None in (temperature, pressure, humidity, pm10, pm25))):
+        sql = "INSERT INTO aq_data VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+        vals = (now, owner, dev_id, temperature, pressure, humidity, pm10, pm25)
+        mycursor.execute(sql, vals)
+        mydb.commit()
+        time.sleep(1)
+        print("Inserted an rh record")
+        temperature = humidity = pressure = pm10 = pm25 = now = None
+
+    if (dev_id == 'ESP_Easy' and (not None in (pm10, pm25))):
+        sql = "INSERT INTO aq_data (dateTime, owner, dev_id, pm10, pm25) VALUES (%s, %s, %s, %s, %s)"
+        vals = (now, owner, dev_id, pm10, pm25)
+        mycursor.execute(sql, vals)
+        mydb.commit()
+        time.sleep(1)
+        print("Inserted an ms record")
+        temperature = humidity = pressure = pm10 = pm25 = now = None
+    mqttc.loop()
+# loop forever
