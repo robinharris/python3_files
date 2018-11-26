@@ -10,16 +10,15 @@ import datetime
 import mysql.connector
 import time
 
+
+
 #mqtt settings
-mqttBroker = 'mqtt.connectedhumber.org'
+mqttBroker = '172.26.6.1'
 mqttClientUser = "connectedhumber"
 mqttClientPassword = "3fds8gssf6"
 
 now = owner = dev_id = None
 temperature = pressure = humidity = pm10 = pm25 = None
-
-def loadData(dateTime, topic, value):
-   pass 
 
 def on_connect(mqttc, obj, flags, rc):
     print("rc: " + str(rc))
@@ -90,8 +89,8 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 while (True):
-    if (((dev_id == 'aq1') or (dev_id == 'aq2')) and (not None in (temperature, pressure, humidity, pm10, pm25))):
-        sql = "INSERT INTO aq_data VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    if (((dev_id == 'aq1') or (dev_id == 'aq2')  or (dev_id =='ajaqi_1')) and (not None in (temperature, pressure, humidity, pm10, pm25))):
+        sql = "INSERT INTO aq_data (dateTime, owner, dev_id, temperature, humidity, pressure, pm10, pm25) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
         vals = (now, owner, dev_id, temperature, pressure, humidity, pm10, pm25)
         mycursor.execute(sql, vals)
         mydb.commit()
