@@ -16,11 +16,17 @@ import mysql.connector
 import time
 import json
 
-#mqtt settings
+# MQTT settings
 mqttBroker = 'mqtt.connectedhumber.org'
 mqttClientUser = "connectedhumber"
 mqttClientPassword = "3fds8gssf6"
 topicToSubscribe = "airquality/data"
+
+# database settings
+dbHost="localhost"
+dbUser="robinusr"
+dbPassword="spanTHEr1v3r"
+dbName="robindb"
 
 def on_connect(mqttc, obj, flags, rc):
     print("rc: " + str(rc))
@@ -60,11 +66,14 @@ def on_message(mqttc, obj, msg):
     vals = (dateTime, dev_id, temperature, pressure, humidity, pm10, pm25)
     print(vals)
     try:
+        # check if the database connection is still open and if not reconnect
+        mydb.ping(reconnect=True, attempts=5, delay=1)
+        # execute SQL to insert a row
         mycursor.execute(sql, vals)
         # commit the change
         mydb.commit()
-        time.sleep(1)
-    except error as e:
+        # time.sleep(1)
+    except Exception as e:
         print("Database error")
         print (e)
 
@@ -74,19 +83,30 @@ def on_subscribe(mqttc,obj,mid,granted_qos):
 mqttc = paho.Client()
 mqttc.username_pw_set(username= mqttClientUser, password=mqttClientPassword)
 
+# set MQTT callbacks
 mqttc.on_message = on_message
 mqttc.on_connect = on_connect
 mqttc.on_subscribe = on_subscribe
-mqttc.connect(mqttBroker)
 
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="robinusr",
-  passwd="spanTHEr1v3r",
-  database="robindb"
-)
-mycursor = mydb.cursor()
+# connect to the MQTT broker
+try:
+    mqttc.connect(mqttBroker)
+except Exception as e:
+    print("Error connecting to the broker")
+    print(e)
 
-while(True):
-    mqttc.loop()
-    time.sleep(1)
+# open a database connection
+try:
+    mydb = mysql.connector.connect(
+    host=dbHost,
+    user=dbUser,
+    passwd=dbPassword,
+    database=dbName
+    )
+    mycursor = mydb.cursor()
+except Exception as e:
+    print("Error connecting to the database")
+    print(e)
+
+# Start the MQTT loop that runs forever and is blocking.
+mqttc.loop_forever()
