@@ -34,6 +34,21 @@ dbName="aq_db"
 
 print("Starting to run chDataLoad_JSON.py")
 
+def dbUpdate(sql, vals):
+    print("starting db update")
+    try:
+        # check if the database connection is still open and if not reconnect
+        mydb.ping(reconnect=True, attempts=5, delay=1)
+        # execute SQL to insert a row
+        mycursor.execute(sql, vals)
+        # commit the change
+        mydb.commit()
+        print("done db update")
+    except Exception as e:
+        print("Database error")
+        print (e)
+
+
 def on_connect(mqttc, obj, flags, rc):
     print("Connected to broker")
     print("rc: " + str(rc))
@@ -45,29 +60,33 @@ def on_connect(mqttc, obj, flags, rc):
 
 def on_message(mqttc, obj, msg):
     # {"dev":"aq2","temp":19.28, "humidity" : 52.02, "pressure" : 1026.79, "PM10" : 3.48, "PM25" : 1.56}
-    print(str(msg.payload))
     payloadJson = json.loads(msg.payload.decode("utf-8"))
+    # set all variables to None
     device_id = device_name = temperature = pressure = humidity = pm10 = pm25 = dateTimeString = None
+    recordedOnString = recordedOnObject = None
+    receivedOnString = receivedOnObject = None
+
+    # first get the device_id from the device_name by looking it up in the database
     try:
         device_name = payloadJson['dev']
+        # SQL SELECT to find device_id
+        sql = "SELECT device_id FROM devices WHERE device_name = %s"
+        vals = (device_name,)
         try:
             # check if the database connection is still open and if not reconnect
             mydb.ping(reconnect=True, attempts=5, delay=1)
-            sql = "SELECT device_id FROM devices WHERE device_name = %s"
-            # execute SQL SELECT to find device_id
-            # the argument to substitute is one item but a tuple of that one item is supplieud
-            mycursor.execute(sql, (device_name,))
-            # this line fetches one row (there should only ever be one row because the
-            # device_name is unique).  '[0]' at the end selects the first (and only)
-            # element from the tuple returned.
+            # execute SQL to insert a row
+            mycursor.execute(sql, vals)
             device_id = mycursor.fetchone()[0]
+            print("Got the device_id")
         except Exception as e:
             print("Database error")
             print (e)
     except Exception:
         print("no device_name provided")
-    print("device_name is: {}   device_id is: {}".format(device_name, device_id))
+        print("device_name is: {}   device_id is: {}".format(device_name, device_id))
 
+    # Next decode the incoming message and set up the variables to be inserted
     if 'temp' in payloadJson:
         temperature = payloadJson['temp']
     if 'humidity' in payloadJson:
@@ -81,24 +100,26 @@ def on_message(mqttc, obj, msg):
     if 'timestamp' in payloadJson:
         dateTimeString = payloadJson['timestamp']
         # create a Python datetime object from the dateTimeString
-        dateTimeObject = datetime.datetime.strptime(dateTimeString, '%a %b %d %Y %H:%M:%S %Z%z')
-    else:
-        # if the message does not contain a key "timestamp", create a received time now
-        dateTimeObject = datetime.datetime.now()
-    # dateT is a string in the required database format
-    dateT = dateTimeObject.strftime('%Y-%m-%d %H:%M:%S')
-    sql = "INSERT INTO readings (dateTime, dev_id, temperature, pressure, humidity, pm10, pm25) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-    vals = (dateT, dev_id, temperature, pressure, humidity, pm10, pm25)
-    try:
-        # check if the database connection is still open and if not reconnect
-        mydb.ping(reconnect=True, attempts=5, delay=1)
-        # execute SQL to insert a row
-        mycursor.execute(sql, vals)
-        # commit the change
-        mydb.commit()
-    except Exception as e:
-        print("Database error")
-        print (e)
+        recordedOnObject = datetime.datetime.strptime(dateTimeString, '%a %b %d %Y %H:%M:%S %Z%z')
+        # recordedONString is a string in the required database format
+        recordedOnString = recordedOnObject.strftime('%Y-%m-%d %H:%M:%S')
+
+    sql = "INSERT INTO readings (recordedon, device_id, raw_json) VALUES (%s, %s, %s)"
+    vals = (recordedOnString, device_id, str(payloadJson))
+    dbUpdate(sql, vals)
+   
+    # sql = "INSERT INTO readings (dateTime, dev_id, temperature, pressure, humidity, pm10, pm25) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    # vals = (dateT, dev_id, temperature, pressure, humidity, pm10, pm25)
+    # try:
+    #     # check if the database connection is still open and if not reconnect
+    #     mydb.ping(reconnect=True, attempts=5, delay=1)
+    #     # execute SQL to insert a row
+    #     mycursor.execute(sql, vals)
+    #     # commit the change
+    #     mydb.commit()
+    # except Exception as e:
+    #     print("Database error")
+    #     print (e)
 
 def on_subscribe(mqttc,obj,mid,granted_qos):
     print("Subscribed: " + str(mid))
