@@ -1,0 +1,37 @@
+{
+  "app_id": "2301195604031956",
+  "counter": 14,
+  "dev_id": "aq3",
+  "hardware_serial": "00F6268F118E3077",
+  "metadata": {
+    "airtime": 61696000,
+    "coding_rate": "4/5",
+    "data_rate": "SF7BW125",
+    "frequency": 868.1,
+    "gateways": [
+      {
+        "channel": 0,
+        "gtw_id": "eui-b827ebfffeb07127",
+        "latitude": 53.784184,
+        "location_source": "registry",
+        "longitude": -0.42193145,
+        "rf_chain": 1,
+        "rssi": -54,
+        "snr": 10,
+        "time": "2018-11-13T09:25:17.860322Z",
+        "timestamp": 1424402035
+      }
+    ],
+    "modulation": "LORA",
+    "time": "2018-11-13T09:25:17.874133366Z"
+  },
+  "payload_fields": {
+    "latitude": 53.7840997,
+    "longitude": -0.4220172,
+    "pm10": 4,
+    "pm25": 1,
+    "volatiles": 89
+  },
+  "payload_raw": "AQRZAGXNDiD0mr//",
+  "port": 1
+}

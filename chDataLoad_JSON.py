@@ -35,7 +35,6 @@ dbName="aq_db"
 print("Starting to run chDataLoad_JSON.py")
 
 def dbUpdate(sql, vals):
-    print("starting db update")
     try:
         # check if the database connection is still open and if not reconnect
         mydb.ping(reconnect=True, attempts=5, delay=1)
@@ -43,11 +42,9 @@ def dbUpdate(sql, vals):
         mycursor.execute(sql, vals)
         # commit the change
         mydb.commit()
-        print("done db update")
     except Exception as e:
         print("Database error")
         print (e)
-
 
 def on_connect(mqttc, obj, flags, rc):
     print("Connected to broker")
@@ -65,6 +62,7 @@ def on_message(mqttc, obj, msg):
     device_id = device_name = temperature = pressure = humidity = pm10 = pm25 = dateTimeString = None
     recordedOnString = recordedOnObject = None
     receivedOnString = receivedOnObject = None
+    readings_id = None
 
     # first get the device_id from the device_name by looking it up in the database
     try:
@@ -78,9 +76,8 @@ def on_message(mqttc, obj, msg):
             # execute SQL to insert a row
             mycursor.execute(sql, vals)
             device_id = mycursor.fetchone()[0]
-            print("Got the device_id")
         except Exception as e:
-            print("Database error")
+            print("Database error - unable to provide required data")
             print (e)
     except Exception:
         print("no device_name provided")
@@ -104,9 +101,16 @@ def on_message(mqttc, obj, msg):
         # recordedONString is a string in the required database format
         recordedOnString = recordedOnObject.strftime('%Y-%m-%d %H:%M:%S')
 
+    # now update readings table with a timestamp supplied by the device, device_id and raw JSON
     sql = "INSERT INTO readings (recordedon, device_id, raw_json) VALUES (%s, %s, %s)"
     vals = (recordedOnString, device_id, str(payloadJson))
     dbUpdate(sql, vals)
+    
+    # get the readings_id for the reading just inserted
+    mycursor.execute("SELECT id FROM readings ORDER BY id DESC LIMIT 1")
+    readings_id = mycursor.fetchone()
+
+
    
     # sql = "INSERT INTO readings (dateTime, dev_id, temperature, pressure, humidity, pm10, pm25) VALUES (%s, %s, %s, %s, %s, %s, %s)"
     # vals = (dateT, dev_id, temperature, pressure, humidity, pm10, pm25)
@@ -144,7 +148,7 @@ try:
     database=dbName
     )
     mycursor = mydb.cursor()
-    print("Opened a database connetion")
+    print("Opened a database connection")
 except Exception as e:
     print("Error connecting to the database")
     print(e)
