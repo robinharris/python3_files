@@ -27,7 +27,7 @@ mqttClientPassword = "3fds8gssf6"
 topicToSubscribe = "airquality/data"
 
 # database settings
-dbHost="94.72.215.27"
+dbHost="192.168.0.136"
 dbUser="robinusr"
 dbPassword="spanTHEr1v3r"
 dbName="aq_db"
@@ -56,7 +56,6 @@ def on_connect(mqttc, obj, flags, rc):
         print("Bad connection Returned code=",str(rc))
 
 def on_message(mqttc, obj, msg):
-    # {"dev":"aq2","temp":19.28, "humidity" : 52.02, "pressure" : 1026.79, "PM10" : 3.48, "PM25" : 1.56}
     payloadJson = json.loads(msg.payload.decode("utf-8"))
     # set all variables to None
     device_id = device_name = temperature = pressure = humidity = pm10 = pm25 = dateTimeString = None
@@ -84,22 +83,26 @@ def on_message(mqttc, obj, msg):
         print("device_name is: {}   device_id is: {}".format(device_name, device_id))
 
     # Next decode the incoming message and set up the variables to be inserted
+    # construct a dictionary of parameters and values
+    parameters = {}
     if 'temp' in payloadJson:
-        temperature = payloadJson['temp']
+        print(payloadJson)
+        parameters["temperature"] = payloadJson['temp']
     if 'humidity' in payloadJson:
-        humidity = payloadJson['humidity']
+        parameters["humidity"] = payloadJson['humidity']
     if 'pressure' in payloadJson:
-        pressure = payloadJson['pressure']
+        parameters["pressure"] = payloadJson['pressure']
     if 'PM10' in payloadJson:
-        pm10 = payloadJson['PM10']
+        parameters["PM10"] = payloadJson['PM10']
     if 'PM25' in payloadJson:
-        pm25 = payloadJson['PM25']
+        parameters["PM25"] = payloadJson['PM25']
     if 'timestamp' in payloadJson:
         dateTimeString = payloadJson['timestamp']
         # create a Python datetime object from the dateTimeString
         recordedOnObject = datetime.datetime.strptime(dateTimeString, '%a %b %d %Y %H:%M:%S %Z%z')
         # recordedONString is a string in the required database format
         recordedOnString = recordedOnObject.strftime('%Y-%m-%d %H:%M:%S')
+        print(recordedOnString)
 
     # now update readings table with a timestamp supplied by the device, device_id and raw JSON
     sql = "INSERT INTO readings (recordedon, device_id, raw_json) VALUES (%s, %s, %s)"
@@ -108,22 +111,15 @@ def on_message(mqttc, obj, msg):
     
     # get the readings_id for the reading just inserted
     mycursor.execute("SELECT id FROM readings ORDER BY id DESC LIMIT 1")
-    readings_id = mycursor.fetchone()
+    readings_id = mycursor.fetchone()[0]
+    print(readings_id)
 
+    # next insert each parameter's reading into reading_values
+    sql = "INSERT INTO reading_values (reading_id, value, reading_value_types_id) VALUES (%s, %s, %s)"
+    for key, value in parameters.items():
+        vals = (readings_id, value, key)
+        dbUpdate(sql, vals)
 
-   
-    # sql = "INSERT INTO readings (dateTime, dev_id, temperature, pressure, humidity, pm10, pm25) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-    # vals = (dateT, dev_id, temperature, pressure, humidity, pm10, pm25)
-    # try:
-    #     # check if the database connection is still open and if not reconnect
-    #     mydb.ping(reconnect=True, attempts=5, delay=1)
-    #     # execute SQL to insert a row
-    #     mycursor.execute(sql, vals)
-    #     # commit the change
-    #     mydb.commit()
-    # except Exception as e:
-    #     print("Database error")
-    #     print (e)
 
 def on_subscribe(mqttc,obj,mid,granted_qos):
     print("Subscribed: " + str(mid))
