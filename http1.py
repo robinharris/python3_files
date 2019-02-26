@@ -15,27 +15,24 @@ mqttTopic = "airquality/data"
 
 def on_connect(mqttc, obj, flags, rc):
     print("Connected to broker")
-    print("rc: " + str(rc))
-    if rc==0:
-        print("connected OK Returned code=" + str(rc))
-        mqttc.subscribe(mqttTopic, 0)
-    else:
-        print("Bad connection Returned code=",str(rc))
+    mqttc.subscribe(mqttTopic)
 
 def on_message(mqttc, obj, msg):
     print("got a message")
     print(str(msg.payload))
-    payloadJson = json.loads(msg.payload.decode("utf-8"))
 
 def on_subscribe(mqttc,obj,mid,granted_qos):
     print("Subscribed: " + str(mid))
 
-# req = requests.get('https://uk-air.defra.gov.uk/sos-ukair/api/v1/timeseries/266/getData?timespan=P1W/2019-02-25')
-# print("HTTP Status Code: " + str(req.status_code))
-# print(40 * '=', "\n\n")
-# print(req.headers)
-# print(40 * '=', "\n\n")
-# json_response = json.loads(req.content)
+req = requests.get('https://uk-air.defra.gov.uk/sos-ukair/api/v1/timeseries/266/getData?timespan=P1D/2019-02-26')
+print("HTTP Status Code: " + str(req.status_code))
+print(40 * '=', "\n\n")
+print(req.headers)
+print(40 * '=', "\n\n")
+json_response = json.loads(req.content)
+for item in json_response['values']:
+    row = str(datetime.fromtimestamp(item['timestamp']/1000)), str(item['value'])
+    print(row)
 
 mqttc = paho.Client()  # uses a random client id
 mqttc.username_pw_set(username=mqttClientUser, password=mqttClientPassword)
@@ -45,16 +42,13 @@ mqttc.on_message = on_message
 print("starting broker")
 mqttc.connect(mqttBroker)
 mqttc.loop_start()
-message = "{\"timestamp\" : \"Mon Feb 25 2019 20:55:38 GMT+0000\",\"dev\":\"test\",\"temp\":10.86,\"PM10\" : 79.00, \"PM25\" : 57.00}"
+# message = "{\"timestamp\" : \"Mon Feb 25 2019 20:55:38 GMT+0000\",\"dev\":\"test\",\"temp\":10.86,\"PM10\" : 79.00, \"PM25\" : 57.00}"
 while True:
-    mqttc.publish(mqttTopic, message)
+    print("looping")
     time.sleep(5)
 
 # with open('freetown1.csv','w', newline='') as csvfile:
 #     rowwriter = csv.writer(csvfile, delimiter = ',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-#     for item in json_response['values']:
-#         row = str(datetime.fromtimestamp(item['timestamp']/1000)), str(item['value'])
-#         print(row)
 #         rowwriter.writerow(row)
 # while True:
 #     time.sleep(0.5)
